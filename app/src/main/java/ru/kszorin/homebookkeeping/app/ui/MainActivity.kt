@@ -1,4 +1,4 @@
-package ru.kszorin.homebookkeeping.app
+package ru.kszorin.homebookkeeping.app.ui
 
 import androidx.appcompat.app.AppCompatActivity
 
