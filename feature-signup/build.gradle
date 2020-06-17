@@ -20,5 +20,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":shared-error"))
+	implementation(project(":shared-user"))
 
+    testImplementation "junit:junit:4.13"
+    testImplementation "io.mockk:mockk:1.9.3"
 }
