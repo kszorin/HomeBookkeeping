@@ -20,6 +20,8 @@ android {
 }
 
 dependencies {
-    testImplementation "junit:junit:4.13"
+	implementation 'com.google.code.gson:gson:2.8.6'
+
+	testImplementation "junit:junit:4.13"
     testImplementation "io.mockk:mockk:1.9.3"
 }
