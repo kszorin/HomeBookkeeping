@@ -1,2 +1,7 @@
-include ':app'
-rootProject.name='HomeBookkeeping'
+include(
+	':app',
+	':shared-error'
+)
+rootProject.name = 'HomeBookkeeping'
+
+project(':shared-error').projectDir = file('shared-error')
