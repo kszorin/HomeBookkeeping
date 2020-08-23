@@ -1,9 +1,11 @@
 include(
-	':app',
-	':shared-error',
-	':shared-user'
+        ':app',
+        ':shared-error',
+		':shared-ui',
+        ':shared-user'
 )
 rootProject.name = 'HomeBookkeeping'
 
 project(':shared-error').projectDir = file('shared-error')
+project(':shared-ui').projectDir = file('shared-ui')
 project(':shared-user').projectDir = file('shared-user')
