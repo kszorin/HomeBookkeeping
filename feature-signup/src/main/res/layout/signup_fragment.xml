@@ -1,83 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-	<data>
-		<variable name="bindingViewModel" type="ru.kszorin.homebookkeeping.feature_signup.presentation.viewmodel.SignupViewModel"/>
-	</data>
-
-	<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-		xmlns:tools="http://schemas.android.com/tools"
+	<TextView
+		android:id="@+id/registration"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:orientation="vertical">
+		android:layout_height="wrap_content"
+		android:layout_marginTop="50dp"
+		android:gravity="center"
+		android:text="@string/registration"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="Регистрация" />
 
-		<TextView
-			android:id="@+id/registration"
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/emailLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="50dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/registration">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/email"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="50dp"
-			android:gravity="center"
-			android:text="@string/registration"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent"
-			tools:text="Регистрация" />
+			android:hint="@string/email" />
+	</com.google.android.material.textfield.TextInputLayout>
 
-		<com.google.android.material.textfield.TextInputLayout
-			android:id="@+id/emailLayout"
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/passwordLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/emailLayout"
+		app:passwordToggleEnabled="true">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/password"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="50dp"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/registration">
+			android:inputType="textPassword"
+			android:hint="@string/password" />
+	</com.google.android.material.textfield.TextInputLayout>
 
-			<com.google.android.material.textfield.TextInputEditText
-				android:id="@+id/email"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:hint="@string/email"
-				android:text="@={bindingViewModel.email}"/>
-		</com.google.android.material.textfield.TextInputLayout>
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/confirmationPasswordLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/passwordLayout"
+		app:passwordToggleEnabled="true">
 
-		<com.google.android.material.textfield.TextInputLayout
-			android:id="@+id/passwordLayout"
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/passwordConfirmation"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/emailLayout"
-			app:passwordToggleEnabled="true">
+			android:inputType="textPassword"
+			android:hint="@string/password_confirmation" />
+	</com.google.android.material.textfield.TextInputLayout>
 
-			<com.google.android.material.textfield.TextInputEditText
-				android:id="@+id/password"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:hint="@string/password"
-				android:inputType="textPassword" />
-		</com.google.android.material.textfield.TextInputLayout>
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/button"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/registration_button"
+		app:layout_constraintTop_toBottomOf="@id/confirmationPasswordLayout"
+		app:layout_constraintStart_toStartOf="parent" />
 
-		<com.google.android.material.textfield.TextInputLayout
-			android:id="@+id/confirmationPasswordLayout"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/passwordLayout"
-			app:passwordToggleEnabled="true">
 
-			<com.google.android.material.textfield.TextInputEditText
-				android:id="@+id/passwordConfirmation"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:hint="@string/password_confirmation"
-				android:inputType="textPassword" />
-		</com.google.android.material.textfield.TextInputLayout>
-
-		<com.google.android.material.button.MaterialButton
-			android:id="@+id/button"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="@string/registration_button"
-			android:onClick="@{() -> bindingViewModel.printEmail()}"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/confirmationPasswordLayout" />
-
-	</androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>
