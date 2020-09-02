@@ -30,6 +30,7 @@ dependencies {
 
     //modules
     implementation project(path: ':feature-signup')
+    implementation project(path: ':shared-user')
 
     //dagger
     implementation 'com.google.dagger:dagger:2.25.4'
