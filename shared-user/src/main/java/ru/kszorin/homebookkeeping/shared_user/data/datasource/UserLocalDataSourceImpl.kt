@@ -3,9 +3,8 @@ package ru.kszorin.homebookkeeping.shared_user.data.datasource
 import android.content.SharedPreferences
 import com.google.gson.Gson
 import ru.kszorin.homebookkeeping.shared_user.data.model.UserModel
-import javax.inject.Inject
 
-class UserLocalDataSourceImpl @Inject constructor(
+class UserLocalDataSourceImpl(
 	private val userPreferences: SharedPreferences,
 	private val gson: Gson
 ) : UserDataSource {
