@@ -4,8 +4,9 @@ import ru.kszorin.homebookkeeping.shared_user.data.converter.UserConverter
 import ru.kszorin.homebookkeeping.shared_user.data.datasource.UserDataSource
 import ru.kszorin.homebookkeeping.shared_user.domain.entity.User
 import ru.kszorin.homebookkeeping.shared_user.domain.repository.UserRepository
+import javax.inject.Inject
 
-class UserRepositoryImpl(
+class UserRepositoryImpl @Inject constructor(
     private val userDataSource: UserDataSource,
     private val userConverter: UserConverter
 ) : UserRepository {

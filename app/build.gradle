@@ -28,10 +28,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation "com.google.android.material:material:1.2.0-beta01"
 
-    //modules
-    implementation project(path: ':feature-signup')
+    implementation 'com.google.code.gson:gson:2.8.6'
 
     //dagger
     implementation 'com.google.dagger:dagger:2.25.4'
     kapt 'com.google.dagger:dagger-compiler:2.25.4'
+    implementation 'com.google.dagger:dagger-android-support:2.25.4'
+    kapt 'com.google.dagger:dagger-android-processor:2.25.4'
+
+    //modules
+    implementation project(path: ':feature-signup')
+    implementation project(path: ':shared-user')
 }
