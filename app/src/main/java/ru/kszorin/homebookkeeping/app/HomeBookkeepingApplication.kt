@@ -17,7 +17,9 @@ class HomeBookkeepingApplication : Application(), HasAndroidInjector {
 
 	override fun onCreate() {
 		super.onCreate()
-		DaggerApplicationComponent.create()
+		DaggerApplicationComponent.builder()
+			.context(this)
+			.create(this)
 			.inject(this)
 	}
 

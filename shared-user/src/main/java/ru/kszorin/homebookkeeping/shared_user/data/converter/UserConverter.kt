@@ -2,8 +2,9 @@ package ru.kszorin.homebookkeeping.shared_user.data.converter
 
 import ru.kszorin.homebookkeeping.shared_user.data.model.UserModel
 import ru.kszorin.homebookkeeping.shared_user.domain.entity.User
+import javax.inject.Inject
 
-class UserConverter {
+class UserConverter @Inject constructor(){
 
 	fun convertToEntity(model: UserModel): User =
 		User(
