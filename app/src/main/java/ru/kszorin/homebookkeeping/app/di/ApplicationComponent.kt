@@ -5,8 +5,15 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
 import ru.kszorin.homebookkeeping.app.HomeBookkeepingApplication
+import ru.kszorin.homebookkeeping.app.di.app_scope.DataModule
 
-@Component(modules = [ApplicationModule::class, DataModule::class])
+@AppScope
+@Component(
+	modules = [
+		ApplicationModule::class,
+		DataModule::class
+	]
+)
 interface ApplicationComponent : AndroidInjector<HomeBookkeepingApplication> {
 
 	@Suppress("DEPRECATION")

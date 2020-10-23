@@ -1,4 +1,4 @@
-package ru.kszorin.homebookkeeping.app.di
+package ru.kszorin.homebookkeeping.app.di.app_scope
 
 import dagger.Binds
 import dagger.Module

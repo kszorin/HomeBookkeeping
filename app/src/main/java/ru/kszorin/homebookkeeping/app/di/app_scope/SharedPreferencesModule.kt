@@ -1,4 +1,4 @@
-package ru.kszorin.homebookkeeping.app.di
+package ru.kszorin.homebookkeeping.app.di.app_scope
 
 import android.content.Context
 import android.content.SharedPreferences

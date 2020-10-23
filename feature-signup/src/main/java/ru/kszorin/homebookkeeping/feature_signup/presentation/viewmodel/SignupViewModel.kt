@@ -11,5 +11,4 @@ class SignupViewModel @Inject constructor(signupUseCase: SignupUseCase) : ViewMo
 	val password = MutableLiveData<String>()
 	val passwordConfirmation = MutableLiveData<String>()
 
-
 }
